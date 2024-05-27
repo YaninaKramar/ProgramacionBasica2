@@ -12,5 +12,14 @@
       this.saldo=saldoInicial; } public Double getSaldo() { return saldo; }
       public abstract void retirarSaldo(Double dineroARetirar); }
     </p>
+    <p>
+      package unlam.pb2.edu.ar; public class CajaDeAhorros extends
+      CuentaBancaria{ private Integer cantidadDeRetiros=0; private static final
+      Double RECARGO=6.0; public CajaDeAhorros(String nombre, Double
+      saldoInicial) { super(nombre,saldoInicial); } @Override public void
+      retirarSaldo(Double retirarDinero) { if(saldo>=retirarDinero) {
+      cantidadDeRetiros++; if(cantidadDeRetiros>5) { saldo=saldo
+      -retirarDinero-RECARGO; }else { saldo=saldo -retirarDinero; } } } }
+    </p>
   </body>
 </html>
