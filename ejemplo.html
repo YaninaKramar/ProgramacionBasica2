@@ -35,5 +35,12 @@
       deudaEnDescubierto=totalARetirarConRecargo; saldo=0.0; } } } public Double
       getDeudaEnDescubierto() { return deudaEnDescubierto; } }
     </p>
+    <p>
+      package unlam.pb2.edu.ar; public class CuentaSueldo extends
+      CuentaBancaria{ public CuentaSueldo(String nombre,Double saldoInicial) {
+      super(nombre,saldoInicial); } @Override public void retirarSaldo(Double
+      dineroARetirar) { if(saldo>=dineroARetirar) { saldo=saldo -dineroARetirar;
+      } } }
+    </p>
   </body>
 </html>
