@@ -4,15 +4,15 @@
     <title>Pagina de prueba</title>
   </head>
   <body>
-    <h1>Titulo de la pagina</h1>
-    <p>
+    <h1>Cuenta bancaria</h1>
+    <p id="Cuenta_bancaria">
       _package unlam.pb2.edu.ar; public abstract class CuentaBancaria {
       protected String nombre; protected Double saldo; public
       CuentaBancaria(String nombre,Double saldoInicial) { this.nombre=nombre;
       this.saldo=saldoInicial; } public Double getSaldo() { return saldo; }
       public abstract void retirarSaldo(Double dineroARetirar); }
     </p>
-    <p>
+    <p id="caja_de_ahorros">
       package unlam.pb2.edu.ar; public class CajaDeAhorros extends
       CuentaBancaria{ private Integer cantidadDeRetiros=0; private static final
       Double RECARGO=6.0; public CajaDeAhorros(String nombre, Double
@@ -21,7 +21,7 @@
       cantidadDeRetiros++; if(cantidadDeRetiros>5) { saldo=saldo
       -retirarDinero-RECARGO; }else { saldo=saldo -retirarDinero; } } } }
     </p>
-    <p>
+    <p id="cuenta_corriente">
       package unlam.pb2.edu.ar; public class CuentaCorriente extends
       CuentaBancaria { private static final Double DESCUBIERTO=-150.0; private
       static final Double PORCENTAJE_DE_RECARGO=5.0; private Double
