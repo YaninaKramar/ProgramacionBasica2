@@ -42,5 +42,63 @@
       dineroARetirar) { if(saldo>=dineroARetirar) { saldo=saldo -dineroARetirar;
       } } }
     </p>
+
+    <p id="test">
+      package unlam.pb2.edu.ar; import static org.junit.Assert.assertEquals;
+      import org.junit.Test; public class CuentasBancariasTest { @Test public
+      void queSePuedaCrearUnaCuentaSueldo() { String nombre="Yanina"; Double
+      saldoInicial=100.0; CuentaSueldo miCuenta= new
+      CuentaSueldo(nombre,saldoInicial); Double valorEsperado=100.0; //ejecucion
+      Double valorObtenido=miCuenta.getSaldo(); //contrastacion
+      assertEquals(valorEsperado,valorObtenido); } @Test public void
+      queUnaCuentaSueldoPuedaExtraerDinero() { String nombre="Yanina"; Double
+      saldoInicial=100.0; CuentaSueldo miCuenta= new
+      CuentaSueldo(nombre,saldoInicial); Double valorEsperado=50.0; Double
+      retirarDinero=50.0; //ejecucion miCuenta.retirarSaldo(retirarDinero);
+      Double valorObtenido=miCuenta.getSaldo(); //contrastacion
+      assertEquals(valorEsperado,valorObtenido); } @Test public void
+      queSePuedaCrearUnaCajaDeAhorros() { String nombre="Yanina"; Double
+      saldoInicial=100.0; CajaDeAhorros miCuenta= new
+      CajaDeAhorros(nombre,saldoInicial); Double valorEsperado=100.0;
+      //ejecucion Double valorObtenido=miCuenta.getSaldo(); //contrastacion
+      assertEquals(valorEsperado,valorObtenido); } @Test public void
+      queUnaCajaDeAhorrosPuedaExtraerDinero() { String nombre="Yanina"; Double
+      saldoInicial=100.0; CajaDeAhorros miCuenta= new
+      CajaDeAhorros(nombre,saldoInicial); Double valorEsperado=50.0; Double
+      retirarDinero=50.0; //ejecucion miCuenta.retirarSaldo(retirarDinero);
+      Double valorObtenido=miCuenta.getSaldo(); //contrastacion
+      assertEquals(valorEsperado,valorObtenido); } @Test public void
+      queUnaCajaDeAhorrosCobreAdicionalDe6DespuesDeLaQuintaExtraccion() { String
+      nombre="Yanina"; Double saldoInicial=100.0; CajaDeAhorros miCuenta= new
+      CajaDeAhorros(nombre,saldoInicial); Double valorEsperado=34.0; Double
+      retirarDinero=10.0; //ejecucion miCuenta.retirarSaldo(retirarDinero);
+      miCuenta.retirarSaldo(retirarDinero);
+      miCuenta.retirarSaldo(retirarDinero);
+      miCuenta.retirarSaldo(retirarDinero);
+      miCuenta.retirarSaldo(retirarDinero);
+      miCuenta.retirarSaldo(retirarDinero); Double
+      valorObtenido=miCuenta.getSaldo(); //contrastacion
+      assertEquals(valorEsperado,valorObtenido); } @Test public void
+      queSePuedaCrearUnaCuentaCorriente() { String nombre="Yanina"; Double
+      saldoInicial=100.0; CuentaCorriente miCuenta= new
+      CuentaCorriente(nombre,saldoInicial); Double valorEsperado=100.0;
+      //ejecucion Double valorObtenido=miCuenta.getSaldo(); //contrastacion
+      assertEquals(valorEsperado,valorObtenido); } @Test public void
+      queUnaCuentaCorrientePuedaExtraerDinero() { String nombre="Yanina"; Double
+      saldoInicial=100.0; CuentaCorriente miCuenta= new
+      CuentaCorriente(nombre,saldoInicial); Double valorEsperado=50.0; Double
+      retirarDinero=50.0; //ejecucion miCuenta.retirarSaldo(retirarDinero);
+      Double valorObtenido=miCuenta.getSaldo(); //contrastacion
+      assertEquals(valorEsperado,valorObtenido); } @Test public void
+      queUnaCuentaCorrientePuedaExtraerDineroEnDescubierta() { String
+      nombre="Yanina"; Double saldoInicial=100.0; CuentaCorriente miCuenta= new
+      CuentaCorriente(nombre,saldoInicial); Double valorEsperado1=0.0; Double
+      valorEsperado2=-105.0; Double retirarDinero=200.0; //ejecucion
+      miCuenta.retirarSaldo(retirarDinero); Double
+      valorObtenido1=miCuenta.getSaldo(); Double
+      valorObtenido2=miCuenta.getDeudaEnDescubierto(); //contrastacion
+      assertEquals(valorEsperado1,valorObtenido1);
+      assertEquals(valorEsperado2,valorObtenido2); } }
+    </p>
   </body>
 </html>
