@@ -21,5 +21,19 @@
       cantidadDeRetiros++; if(cantidadDeRetiros>5) { saldo=saldo
       -retirarDinero-RECARGO; }else { saldo=saldo -retirarDinero; } } } }
     </p>
+    <p>
+      package unlam.pb2.edu.ar; public class CuentaCorriente extends
+      CuentaBancaria { private static final Double DESCUBIERTO=-150.0; private
+      static final Double PORCENTAJE_DE_RECARGO=5.0; private Double
+      deudaEnDescubierto=0.0; public CuentaCorriente(String nombre, Double
+      saldoInicial) { super(nombre,saldoInicial); } @Override public void
+      retirarSaldo(Double retirarDinero) { if(saldo>=retirarDinero) {
+      saldo=saldo -retirarDinero; }else { Double
+      descubiertoParcial=saldo-retirarDinero; Double
+      totalARetirarConRecargo=descubiertoParcial+(descubiertoParcial*PORCENTAJE_DE_RECARGO/100);
+      if(DESCUBIERTO<(saldo+totalARetirarConRecargo)) {
+      deudaEnDescubierto=totalARetirarConRecargo; saldo=0.0; } } } public Double
+      getDeudaEnDescubierto() { return deudaEnDescubierto; } }
+    </p>
   </body>
 </html>
